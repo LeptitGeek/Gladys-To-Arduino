@@ -2,9 +2,10 @@
 
 String command = "";
 char endMarker = '%';
-int device = 13;
 
-int devicetypeId = 115;
+int device = 13; //pin sur sur lequel le device est branché
+
+int devicetype_id = 115; //id du devicetype de gladys
 
 void setup() {
   Serial.begin(9600);
@@ -26,7 +27,7 @@ void executeFunction(String json_data) {
   StaticJsonBuffer<200> jsonBuffer;
   JsonObject& json_received = jsonBuffer.parseObject(json_data);
   //on décompose la chaine de cartère
-  if ( json_received["deviceType"] == int(devicetypeId) ) {
+  if ( json_received["deviceType"] == int(devicetype_id) ) {
     devicetypeNewValue(json_received["value"]);
   } 
 }
