@@ -3,9 +3,9 @@
 String command = "";
 char endMarker = '%';
 
-int device = 13; //pin sur sur lequel le device est branché
+int device = PIN_OF_YOUR_DEVICE; //pin sur sur lequel le device est branché
 
-int devicetype_id = 115; //id du devicetype de gladys
+int devicetype_id = YOUR_DEVICETYPE_ID; //id du devicetype de gladys
 
 void setup() {
   Serial.begin(9600);
